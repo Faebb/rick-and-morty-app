@@ -3,23 +3,28 @@
 
 import { useState, useEffect } from 'react';
 import { getCharacters } from '@/lib/api';
-import { Character, ApiResponse, CharacterFilters } from '@/types/character';
+import { ApiResponse, CharacterFilters } from '@/types/character';
 import CharacterCard from '@/components/CharacterCard';
 import Pagination from '@/components/Pagination';
 import Filters from '@/components/Filters';
+import { useCharacterStore } from '@/lib/useCharacterStore';
 
 export default function Home() {
   const [data, setData] = useState<ApiResponse | null>(null);
-  const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [filters, setFilters] = useState<CharacterFilters>({});
 
-  // Debounce para búsqueda por nombre
+  const currentPage = useCharacterStore((s) => s.currentPage);
+  const filters = useCharacterStore((s) => s.filters);
+  const setPage = useCharacterStore((s) => s.setPage);
+  const setFilters = useCharacterStore((s) => s.setFilters);
+  const clearFilters = useCharacterStore((s) => s.clearFilters);
+
+  // Debounce para búsqueda por nombre y cambios de página/filtros
   useEffect(() => {
     const timer = setTimeout(() => {
       fetchData();
-    }, 500); // Espera 500ms después de que el usuario deje de escribir
+    }, 500);
 
     return () => clearTimeout(timer);
   }, [currentPage, filters]);
@@ -27,7 +32,7 @@ export default function Home() {
   const fetchData = async () => {
     setLoading(true);
     setError(null);
-    
+
     try {
       const result = await getCharacters(currentPage, filters);
       setData(result);
@@ -40,18 +45,16 @@ export default function Home() {
   };
 
   const handlePageChange = (page: number) => {
-    setCurrentPage(page);
+    setPage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleFilterChange = (newFilters: CharacterFilters) => {
     setFilters(newFilters);
-    setCurrentPage(1); // Resetear a la primera página cuando cambian los filtros
   };
 
   const handleClearFilters = () => {
-    setFilters({});
-    setCurrentPage(1);
+    clearFilters();
   };
 
   if (loading && !data) {
@@ -61,9 +64,7 @@ export default function Home() {
   if (error) {
     return (
       <div className="text-center py-12">
-        <p className="text-red-600 text-lg font-semibold">
-          {error}
-        </p>
+        <p className="text-red-600 text-lg font-semibold">{error}</p>
         <button
           onClick={() => fetchData()}
           className="mt-4 px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
@@ -114,22 +115,14 @@ export default function Home() {
 
           {/* Paginación */}
           {data.info.pages > 1 && (
-            <Pagination
-              currentPage={currentPage}
-              totalPages={data.info.pages}
-              onPageChange={handlePageChange}
-            />
+            <Pagination currentPage={currentPage} totalPages={data.info.pages} onPageChange={handlePageChange} />
           )}
         </>
       ) : (
         <div className="text-center py-12">
           <div className="text-6xl mb-4">🔍</div>
-          <p className="text-xl font-semibold text-gray-700 mb-2">
-            No se encontraron personajes
-          </p>
-          <p className="text-gray-500 mb-6">
-            Intenta ajustar los filtros de búsqueda
-          </p>
+          <p className="text-xl font-semibold text-gray-700 mb-2">No se encontraron personajes</p>
+          <p className="text-gray-500 mb-6">Intenta ajustar los filtros de búsqueda</p>
           <button
             onClick={handleClearFilters}
             className="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"

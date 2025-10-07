@@ -5,7 +5,9 @@ import { Inter } from "next/font/google";
 import Link from "next/link";
 import ActiveNavLink from "@/components/ActiveNavLink";
 import MobileNav from "@/components/MobileNav";
+import AuthButton from "@/components/AuthButton";
 import "./globals.css";
+import RequireAuth from '@/components/RequireAuth';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -42,13 +44,16 @@ export default function RootLayout({
               </nav>
 
               {/* Navegación Móvil */}
-              <MobileNav />
+              <div className="flex items-center gap-4">
+                <AuthButton />
+                <MobileNav />
+              </div>
             </div>
           </div>
         </header>
-        {/* Contenido principal */}
+        {/* Contenido principal (protegido) */}
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          {children}
+          <RequireAuth>{children}</RequireAuth>
         </main>
         {/* Footer */}
         <footer className="border-t border-gray-200 bg-white mt-16">
