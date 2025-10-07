@@ -57,7 +57,7 @@ export default function MobileNav() {
                   : 'text-gray-700 hover:bg-gray-100'
               }`}
             >
-              <span className="text-xl">👤</span>
+              <span className="text-xl"></span>
               <span className="font-medium">Personajes</span>
             </Link>
             <Link
@@ -69,7 +69,7 @@ export default function MobileNav() {
                   : 'text-gray-700 hover:bg-gray-100'
               }`}
             >
-              <span className="text-xl">🌍</span>
+              <span className="text-xl"></span>
               <span className="font-medium">Locaciones</span>
             </Link>
             <Link
@@ -81,7 +81,7 @@ export default function MobileNav() {
                   : 'text-gray-700 hover:bg-gray-100'
               }`}
             >
-              <span className="text-xl">📺</span>
+              <span className="text-xl"></span>
               <span className="font-medium">Episodios</span>
             </Link>
           </nav>

@@ -1,4 +1,3 @@
-// src/app/character/[id]/error.tsx
 'use client';
 
 import Link from 'next/link';
@@ -7,7 +6,6 @@ export default function Error() {
   return (
     <div className="max-w-5xl mx-auto">
       <div className="text-center py-16">
-        <div className="text-6xl mb-4">😵</div>
         <h1 className="text-3xl font-bold text-gray-900 mb-4">
           Personaje no encontrado
         </h1>

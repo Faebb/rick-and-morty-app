@@ -1,5 +1,3 @@
-// src/app/location/[id]/loading.tsx
-
 export default function Loading() {
   return (
     <div className="max-w-6xl mx-auto">

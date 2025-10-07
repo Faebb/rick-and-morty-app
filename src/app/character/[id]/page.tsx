@@ -1,5 +1,3 @@
-// src/app/character/[id]/page.tsx
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -114,21 +112,18 @@ export default async function CharacterDetailPage({ params }: CharacterDetailPag
               <InfoItem
                 label="Origen"
                 value={character.origin.name}
-                icon="🌍"
               />
 
               {/* Última ubicación */}
               <InfoItem
                 label="Última ubicación conocida"
                 value={character.location.name}
-                icon="📍"
               />
 
               {/* Número de episodios */}
               <InfoItem
                 label="Apariciones"
                 value={`${character.episode.length} episodios`}
-                icon="📺"
               />
 
               {/* Fecha de creación */}
@@ -139,7 +134,6 @@ export default async function CharacterDetailPage({ params }: CharacterDetailPag
                   month: 'long',
                   day: 'numeric',
                 })}
-                icon="📅"
               />
             </div>
           </div>

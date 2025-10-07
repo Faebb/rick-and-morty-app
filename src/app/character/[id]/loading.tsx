@@ -1,5 +1,3 @@
-// src/app/character/[id]/loading.tsx
-
 export default function Loading() {
   return (
     <div className="max-w-5xl mx-auto">

@@ -1,4 +1,3 @@
-// src/components/EpisodeFilters.tsx
 'use client';
 
 import { EpisodeFilters } from '@/types/episode';

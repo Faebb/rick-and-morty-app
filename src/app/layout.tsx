@@ -38,9 +38,9 @@ export default function RootLayout({
 
               {/* Navegación Desktop */}
               <nav className="hidden md:flex items-center space-x-1">
-                <ActiveNavLink href="/" label="Personajes" icon="👤" />
-                <ActiveNavLink href="/location" label="Locaciones" icon="🌍" />
-                <ActiveNavLink href="/episode" label="Episodios" icon="📺" />
+                <ActiveNavLink href="/" label="Personajes" icon="" />
+                <ActiveNavLink href="/location" label="Locaciones" icon="" />
+                <ActiveNavLink href="/episode" label="Episodios" icon="" />
               </nav>
 
               {/* Navegación Móvil */}

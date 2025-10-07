@@ -1,5 +1,3 @@
-// src/app/location/[id]/page.tsx
-
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -56,7 +54,7 @@ export default async function LocationDetailPage({ params }: LocationDetailPageP
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Tipo */}
           <div className="flex items-start space-x-3">
-            <span className="text-3xl">🏢</span>
+            <span className="text-3xl"></span>
             <div>
               <p className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-1">
                 Tipo
@@ -69,7 +67,7 @@ export default async function LocationDetailPage({ params }: LocationDetailPageP
 
           {/* Dimensión */}
           <div className="flex items-start space-x-3">
-            <span className="text-3xl">🌌</span>
+            <span className="text-3xl"></span>
             <div>
               <p className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-1">
                 Dimensión
@@ -82,7 +80,7 @@ export default async function LocationDetailPage({ params }: LocationDetailPageP
 
           {/* Total de residentes */}
           <div className="flex items-start space-x-3">
-            <span className="text-3xl">👥</span>
+            <span className="text-3xl"></span>
             <div>
               <p className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-1">
                 Total de Residentes
@@ -153,7 +151,7 @@ export default async function LocationDetailPage({ params }: LocationDetailPageP
       {/* Mensaje si no hay residentes */}
       {location.residents.length === 0 && (
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-12 text-center">
-          <div className="text-6xl mb-4">👻</div>
+          <div className="text-6xl mb-4"></div>
           <h3 className="text-xl font-semibold text-gray-700 mb-2">
             No hay residentes conocidos
           </h3>

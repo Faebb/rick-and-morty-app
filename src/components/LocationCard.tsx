@@ -1,5 +1,3 @@
-// src/components/LocationCard.tsx
-
 import Link from 'next/link';
 import { Location } from '@/types/location';
 
@@ -20,7 +18,7 @@ export default function LocationCard({ location }: LocationCardProps) {
         <div className="space-y-3">
           {/* Tipo */}
           <div className="flex items-start">
-            <span className="text-2xl mr-3">🏢</span>
+            <span className="text-2xl mr-3"></span>
             <div className="flex-1 min-w-0">
               <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">
                 Tipo
@@ -33,7 +31,7 @@ export default function LocationCard({ location }: LocationCardProps) {
 
           {/* Dimensión */}
           <div className="flex items-start">
-            <span className="text-2xl mr-3">🌌</span>
+            <span className="text-2xl mr-3"></span>
             <div className="flex-1 min-w-0">
               <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">
                 Dimensión
@@ -46,7 +44,7 @@ export default function LocationCard({ location }: LocationCardProps) {
 
           {/* Residentes */}
           <div className="flex items-start">
-            <span className="text-2xl mr-3">👥</span>
+            <span className="text-2xl mr-3"></span>
             <div className="flex-1">
               <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">
                 Residentes

@@ -1,5 +1,3 @@
-// src/components/EpisodeCard.tsx
-
 import Link from 'next/link';
 import { Episode } from '@/types/episode';
 
@@ -41,14 +39,14 @@ export default function EpisodeCard({ episode }: EpisodeCardProps) {
         <div className="space-y-2 mt-auto">
           {/* Fecha de emisión */}
           <div className="flex items-center text-sm text-gray-600">
-            <span className="mr-2">📅</span>
+            <span className="mr-2"></span>
             <span>{episode.air_date}</span>
           </div>
 
           {/* Temporada y episodio */}
           {episodeInfo && (
             <div className="flex items-center text-sm text-gray-600">
-              <span className="mr-2">📺</span>
+              <span className="mr-2"></span>
               <span>
                 Temporada {episodeInfo.season}, Episodio {episodeInfo.episode}
               </span>
@@ -57,7 +55,7 @@ export default function EpisodeCard({ episode }: EpisodeCardProps) {
 
           {/* Número de personajes */}
           <div className="flex items-center text-sm text-gray-600">
-            <span className="mr-2">👥</span>
+            <span className="mr-2"></span>
             <span>
               {episode.characters.length}{' '}
               {episode.characters.length === 1 ? 'personaje' : 'personajes'}

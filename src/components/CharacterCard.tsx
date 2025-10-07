@@ -1,5 +1,3 @@
-// src/components/CharacterCard.tsx
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { Character } from '@/types/character';

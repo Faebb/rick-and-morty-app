@@ -1,4 +1,3 @@
-// src/app/location/page.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -98,7 +97,7 @@ export default function LocationsPage() {
             <p className="text-sm text-gray-600">
               {loading ? (
                 <span className="inline-flex items-center">
-                  <span className="animate-spin mr-2">⏳</span>
+                  <span className="animate-spin mr-2"></span>
                   Cargando...
                 </span>
               ) : (
@@ -131,7 +130,7 @@ export default function LocationsPage() {
         </>
       ) : (
         <div className="text-center py-12">
-          <div className="text-6xl mb-4">🌍</div>
+          <div className="text-6xl mb-4"></div>
           <p className="text-xl font-semibold text-gray-700 mb-2">
             No se encontraron locaciones
           </p>

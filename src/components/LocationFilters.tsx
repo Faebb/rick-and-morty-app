@@ -1,4 +1,3 @@
-// src/components/LocationFilters.tsx
 'use client';
 
 import { LocationFilters } from '@/types/location';

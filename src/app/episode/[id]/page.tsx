@@ -1,5 +1,3 @@
-// src/app/episode/[id]/page.tsx
-
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -79,7 +77,7 @@ export default async function EpisodeDetailPage({ params }: EpisodeDetailPagePro
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Fecha de emisión */}
           <div className="flex items-start space-x-3">
-            <span className="text-3xl">📅</span>
+            <span className="text-3xl"></span>
             <div>
               <p className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-1">
                 Fecha de emisión
@@ -91,7 +89,7 @@ export default async function EpisodeDetailPage({ params }: EpisodeDetailPagePro
           {/* Temporada y episodio */}
           {episodeInfo && (
             <div className="flex items-start space-x-3">
-              <span className="text-3xl">📺</span>
+              <span className="text-3xl"></span>
               <div>
                 <p className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-1">
                   Temporada y episodio
@@ -105,7 +103,7 @@ export default async function EpisodeDetailPage({ params }: EpisodeDetailPagePro
 
           {/* Total de personajes */}
           <div className="flex items-start space-x-3">
-            <span className="text-3xl">👥</span>
+            <span className="text-3xl"></span>
             <div>
               <p className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-1">
                 Personajes
